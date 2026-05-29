@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcis Chamber Music Quiz Show</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <div class="stage-credit" aria-hidden="true">Arcis Saxophone Quartet Edition</div>
+
+      <section id="startScreen" class="screen screen-start is-active">
+        <div class="title-stack">
+          <p class="show-name">Chamber Music Hot Seat</p>
+          <h1>Quartet Quiz Show</h1>
+        </div>
+
+        <div class="lineup" aria-label="Quartet lineup">
+          <article class="player-card soprano">
+            <span class="player-name">Claus</span>
+            <span class="player-voice">Soprano</span>
+          </article>
+          <article class="player-card alto">
+            <span class="player-name">Bernardo</span>
+            <span class="player-voice">Alto</span>
+          </article>
+          <article class="player-card tenor">
+            <span class="player-name">Sonia</span>
+            <span class="player-voice">Tenor</span>
+          </article>
+          <article class="player-card baritone">
+            <span class="player-name">Jure</span>
+            <span class="player-voice">Baritone</span>
+          </article>
+        </div>
+
+        <div class="start-actions" aria-label="Game modes">
+          <button id="startBtn" class="primary-action" type="button">Start the Show</button>
+          <button id="marathonBtn" class="secondary-action" type="button">Marathon Set</button>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="screen screen-game" aria-live="polite">
+        <header class="hud">
+          <div>
+            <span class="hud-label">Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div>
+            <span class="hud-label">Streak</span>
+            <strong id="streakValue">0</strong>
+          </div>
+          <div>
+            <span class="hud-label">Question</span>
+            <strong><span id="questionNumber">1</span>/<span id="questionTotal">20</span></strong>
+          </div>
+          <div class="timer-wrap">
+            <span class="hud-label">Clock</span>
+            <strong id="timerValue">25</strong>
+          </div>
+        </header>
+
+        <section class="quiz-panel">
+          <div class="quiz-meta">
+            <span id="categoryValue">Chamber Music</span>
+            <span id="difficultyValue">Warm-up</span>
+          </div>
+          <h2 id="questionText">Question text</h2>
+          <div id="answers" class="answers" aria-label="Answer choices"></div>
+          <p id="feedback" class="feedback" aria-live="assertive"></p>
+        </section>
+
+        <section class="quartet-strip" aria-label="Quartet lifelines">
+          <button id="lifelineClaus" class="lifeline soprano" type="button" title="Remove one wrong answer">
+            <span>Claus</span>
+            <strong>Soprano cue</strong>
+          </button>
+          <button id="lifelineBernardo" class="lifeline alto" type="button" title="Add time">
+            <span>Bernardo</span>
+            <strong>Alto time</strong>
+          </button>
+          <button id="lifelineSonia" class="lifeline tenor" type="button" title="Allow one second guess">
+            <span>Sonia</span>
+            <strong>Tenor retry</strong>
+          </button>
+          <button id="lifelineJure" class="lifeline baritone" type="button" title="Protect the ensemble meter">
+            <span>Jure</span>
+            <strong>Bari save</strong>
+          </button>
+        </section>
+
+        <div class="meter-row" aria-label="Ensemble meter">
+          <span>Ensemble nerve</span>
+          <div class="meter"><div id="nerveFill" class="meter-fill"></div></div>
+          <strong id="nerveValue">68%</strong>
+        </div>
+      </section>
+
+      <section id="endScreen" class="screen screen-end">
+        <p class="show-name">Final Cadence</p>
+        <h2 id="verdictTitle">General rehearsal survived</h2>
+        <p id="verdictText" class="verdict-copy"></p>
+        <div class="result-grid" aria-label="Result summary">
+          <div><span>Score</span><strong id="finalScore">0</strong></div>
+          <div><span>Accuracy</span><strong id="finalAccuracy">0%</strong></div>
+          <div><span>Best streak</span><strong id="finalStreak">0</strong></div>
+        </div>
+        <div class="start-actions">
+          <button id="againBtn" class="primary-action" type="button">Play Again</button>
+          <button id="reviewBtn" class="secondary-action" type="button">Review Misses</button>
+        </div>
+        <div id="missedList" class="missed-list" hidden></div>
+      </section>
+    </main>
+
+    <script src="./questions.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
