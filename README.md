@@ -2,6 +2,10 @@
 
 A small offline browser game for a saxophone quartet gag.
 
+Live version for phones:
+
+https://theshakermakers.github.io/arcis-quartet-quiz/
+
 Open `index.html` in a browser, or run a tiny local server:
 
 ```bash
