@@ -100,11 +100,23 @@
       color: #fff;
       background: #e30613;
     }
-    a.button.secondary { background: #fff; color: #e30613; }
+    a.button.primary {
+      grid-column: 1 / -1;
+      padding: 16px 18px;
+      font-size: 18px;
+    }
+    a.button.secondary {
+      background: #fff;
+      color: #e30613;
+      padding: 9px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      border-width: 1.5px;
+    }
     .small { font-size: 14px; color: #555; margin-top: 16px; }
     .footer { font-size: 14px; margin-top: 22px; color: #333; }
     .footer a { color: #e30613; }
-    @media (min-width: 720px) { .buttons { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 720px) { .buttons { grid-template-columns: 1fr 1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -122,7 +134,7 @@
         <p class="intro">Musik, Tanz, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease „Quirky Nightclub Chronicles“.<br>Euer arcis (Arcis Saxophon Quartett und arcis_collective)</p>
         <p class="intro-en">Music, dance, drinks and food in the garden of our rehearsal studio. At the same time, we are celebrating the release of our album “Quirky Nightclub Chronicles”.<br>Your arcis (Arcis Saxophon Quartett and arcis_collective)</p>
         <div class="buttons">
-          <a class="button" href="arcis-sommerparty-2026.ics">Kalenderdatei öffnen (.ics)</a>
+          <a class="button primary" href="arcis-sommerparty-2026.ics">In Kalender eintragen</a>
           <a class="button secondary" id="google" href="#">Alternative: Google Kalender</a>
           <a class="button secondary" id="outlook" href="#">Alternative: Outlook Web</a>
           <a class="button secondary" id="yahoo" href="#">Alternative: Yahoo Kalender</a>
