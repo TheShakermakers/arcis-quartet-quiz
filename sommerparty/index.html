@@ -141,7 +141,7 @@
         <p class="date">15. Juli 2026<br>18:00 Uhr</p>
         <p class="place">Frauenlobstraße 5</p>
         <div class="buttons">
-          <a class="button primary" id="primary-calendar" href="arcis-sommerparty-2026.ics">In Kalender eintragen</a>
+          <a class="button primary" id="primary-calendar" href="arcis-sommerparty-2026-iphone.ics">In Kalender eintragen</a>
           <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
             <a class="button secondary" href="apple-kalender.html">Apple Mac</a>
             <a class="button secondary" id="google" href="#">Google</a>
@@ -149,7 +149,7 @@
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
           </div>
           <p class="small" id="calendar-hint">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
-          <p class="small ios-tip" id="ios-tip" hidden>iPhone: Wenn du den Google Kalender nutzt, nimm unten Google. Der große Button geht in den Apple Kalender.</p>
+          <p class="small ios-tip" id="ios-tip" hidden>iPhone: Im Importfenster oben rechts hinzufügen. Falls du Google Kalender nutzt, nimm unten Google.</p>
         </div>
       </div>
       <div class="content">
@@ -171,7 +171,7 @@
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const isMacDesktop = /Mac/.test(platform) && !isIOS;
     if (isIOS) {
-      document.getElementById("calendar-hint").textContent = "iPhone: Der große Button öffnet den Apple Kalender. Danach oben rechts hinzufügen.";
+      document.getElementById("calendar-hint").textContent = "iPhone: Der große Button öffnet eine neue Kalenderdatei. Danach oben rechts hinzufügen.";
       document.getElementById("ios-tip").hidden = false;
     }
     if (isMacDesktop) {
