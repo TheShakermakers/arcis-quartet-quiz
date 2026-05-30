@@ -140,13 +140,14 @@
         <p class="date">15. Juli 2026<br>18:00 Uhr</p>
         <p class="place">Frauenlobstraße 5</p>
         <div class="buttons">
-          <a class="button primary" href="arcis-sommerparty-2026.ics">In Kalender eintragen</a>
+          <a class="button primary" id="primary-calendar" href="arcis-sommerparty-2026.ics">In Kalender eintragen</a>
           <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
+            <a class="button secondary" href="apple-kalender.html">Apple Mac</a>
             <a class="button secondary" id="google" href="#">Google</a>
             <a class="button secondary" id="outlook" href="#">Outlook</a>
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
           </div>
-          <p class="small">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
+          <p class="small" id="calendar-hint">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
         </div>
       </div>
       <div class="content">
@@ -163,6 +164,14 @@
     const title = "Arcis Sommerparty";
     const locationText = "Frauenlobstraße 5, München";
     const details = `Arcis Sommerparty am 15. Juli 2026 ab 18:00 Uhr.\n\nMusik, Tanz, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease "Quirky Nightclub Chronicles".\nEuer arcis (Arcis Saxophon Quartett und arcis_collective)\n\nMusic, dance, drinks and food in the garden of our rehearsal studio. At the same time, we are celebrating the release of our album "Quirky Nightclub Chronicles".\nYour arcis (Arcis Saxophon Quartett and arcis_collective)\n\nKontakt: booking@arcisquartett.de\nWebsite Arcis Saxophon Quartett: https://www.arcissaxophonquartett.de\nWebsite arcis_collective: https://www.arciscollective.de\nInstagram: https://www.instagram.com/arcissaxophonquartett`;
+    const userAgent = navigator.userAgent || "";
+    const platform = navigator.platform || "";
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isMacDesktop = /Mac/.test(platform) && !isIOS;
+    if (isMacDesktop) {
+      document.getElementById("primary-calendar").href = "apple-kalender.html";
+      document.getElementById("calendar-hint").textContent = "Auf dem Mac versucht die Hauptoption direkt Apple Kalender zu öffnen. Sonst funktioniert die Kalenderdatei.";
+    }
     const params = new URLSearchParams({ action: "TEMPLATE", text: title, dates: "20260715T160000Z/20260715T210000Z", details, location: locationText, ctz: "Europe/Berlin" });
     document.getElementById("google").href = "https://calendar.google.com/calendar/render?" + params.toString();
     const outlookParams = new URLSearchParams({ path: "/calendar/action/compose", rru: "addevent", subject: title, startdt: "2026-07-15T18:00:00", enddt: "2026-07-15T23:00:00", body: details, location: locationText });
