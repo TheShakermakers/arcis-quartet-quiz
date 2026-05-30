@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Arcis Saxophon Quartett//Sommerparty 2026//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Arcis Sommerparty
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:arcis-sommerparty-2026-07-15-v2@arcissaxophonquartett.de
+DTSTAMP:20260530T104000Z
+DTSTART:20260715T160000Z
+DTEND:20260715T210000Z
+SUMMARY:Arcis Sommerparty
+LOCATION:Frauenlobstrasse 5, Muenchen
+DESCRIPTION:Musik, Tanz, Drinks und Food. Albumrelease: Quirky Nightclub Chronicles. Website: https://www.arciscollective.de
+URL:https://www.arciscollective.de
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
