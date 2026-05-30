@@ -142,6 +142,7 @@
         <div class="buttons">
           <a class="button primary" id="primary-calendar" href="arcis-sommerparty-2026-iphone.ics">In Kalender eintragen</a>
           <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
+            <a class="button secondary" id="ics-alt" href="arcis-sommerparty-2026-iphone.ics">ICS</a>
             <a class="button secondary" id="google" href="#">Google</a>
             <a class="button secondary" id="outlook" href="#">Outlook</a>
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
@@ -166,14 +167,21 @@
     const userAgent = navigator.userAgent || "";
     const platform = navigator.platform || "";
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(userAgent);
     const primaryCalendar = document.getElementById("primary-calendar");
+    const googleButton = document.getElementById("google");
+    const params = new URLSearchParams({ action: "TEMPLATE", text: title, dates: "20260715T160000Z/20260715T210000Z", details, location: locationText, ctz: "Europe/Berlin" });
+    googleButton.href = "https://calendar.google.com/calendar/render?" + params.toString();
     primaryCalendar.addEventListener("click", function () {
       if (isIOS) {
         alert("iPhone: Im nächsten Fenster unten auf ‚Hinzufügen‘ tippen. Der blaue Haken oben rechts speichert den Termin nicht.\n\niPhone: In the next window, tap ‘Add’ at the bottom. The blue checkmark at the top right does not save the event.");
       }
     });
-    const params = new URLSearchParams({ action: "TEMPLATE", text: title, dates: "20260715T160000Z/20260715T210000Z", details, location: locationText, ctz: "Europe/Berlin" });
-    document.getElementById("google").href = "https://calendar.google.com/calendar/render?" + params.toString();
+    if (isAndroid) {
+      primaryCalendar.href = googleButton.href;
+      primaryCalendar.textContent = "In Google Kalender eintragen";
+      document.getElementById("calendar-hint").textContent = "Android: Der große Button öffnet Google Kalender. Alternativ ICS, Outlook oder Yahoo nutzen.";
+    }
     const outlookParams = new URLSearchParams({ path: "/calendar/action/compose", rru: "addevent", subject: title, startdt: "2026-07-15T18:00:00", enddt: "2026-07-15T23:00:00", body: details, location: locationText });
     document.getElementById("outlook").href = "https://outlook.live.com/calendar/0/deeplink/compose?" + outlookParams.toString();
     const yahooParams = new URLSearchParams({ v: "60", title, st: "20260715T160000Z", et: "20260715T210000Z", desc: details, in_loc: locationText });
