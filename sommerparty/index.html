@@ -84,15 +84,15 @@
       background: white;
       padding: 4px 8px;
     }
-    .content { padding: 24px; }
-    .meta { font-size: 19px; margin: 0 0 18px; }
-    .intro { font-size: 18px; margin: 0 0 8px; }
+    .content { padding: 22px 24px 24px; }
+    .meta { font-size: 19px; margin: 0 0 14px; }
+    .intro { font-size: 18px; margin: 18px 0 8px; }
     .intro-en { font-size: 15px; font-style: italic; color: #555; margin: 0 0 18px; }
-    .buttons { display: grid; gap: 10px; margin: 20px 0 18px; }
+    .buttons {
+      margin: 14px 0 16px;
+    }
     a.button {
-      display: block;
       text-align: center;
-      padding: 14px 16px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 800;
@@ -101,22 +101,34 @@
       background: #e30613;
     }
     a.button.primary {
-      grid-column: 1 / -1;
-      padding: 16px 18px;
-      font-size: 18px;
+      display: block;
+      width: 100%;
+      padding: 17px 18px;
+      font-size: 19px;
+      line-height: 1.15;
+      box-shadow: 0 5px 14px rgba(227,6,19,0.18);
+    }
+    .alternative-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 9px;
     }
     a.button.secondary {
+      display: inline-block;
       background: #fff;
       color: #e30613;
-      padding: 9px 12px;
-      font-size: 13px;
+      padding: 4px 8px;
+      font-size: 11px;
+      line-height: 1.1;
       font-weight: 700;
-      border-width: 1.5px;
+      border-width: 1px;
+      opacity: 0.88;
     }
-    .small { font-size: 14px; color: #555; margin-top: 16px; }
+    .small { font-size: 13px; color: #555; margin: 10px 0 0; text-align: center; }
     .footer { font-size: 14px; margin-top: 22px; color: #333; }
     .footer a { color: #e30613; }
-    @media (min-width: 720px) { .buttons { grid-template-columns: 1fr 1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -131,15 +143,17 @@
       </div>
       <div class="content">
         <p class="meta"><strong>15. Juli 2026, ab 18:00 Uhr</strong><br>Frauenlobstraße 5, München</p>
-        <p class="intro">Musik, Tanz, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease „Quirky Nightclub Chronicles“.<br>Euer arcis (Arcis Saxophon Quartett und arcis_collective)</p>
-        <p class="intro-en">Music, dance, drinks and food in the garden of our rehearsal studio. At the same time, we are celebrating the release of our album “Quirky Nightclub Chronicles”.<br>Your arcis (Arcis Saxophon Quartett and arcis_collective)</p>
         <div class="buttons">
           <a class="button primary" href="arcis-sommerparty-2026.ics">In Kalender eintragen</a>
-          <a class="button secondary" id="google" href="#">Alternative: Google Kalender</a>
-          <a class="button secondary" id="outlook" href="#">Alternative: Outlook Web</a>
-          <a class="button secondary" id="yahoo" href="#">Alternative: Yahoo Kalender</a>
+          <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
+            <a class="button secondary" id="google" href="#">Google Kalender</a>
+            <a class="button secondary" id="outlook" href="#">Outlook Web</a>
+            <a class="button secondary" id="yahoo" href="#">Yahoo</a>
+          </div>
+          <p class="small">Die Hauptoption öffnet die Kalenderdatei für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
         </div>
-        <p class="small">Die rote Auswahl lädt eine .ics-Datei. Das funktioniert meist direkt mit Apple Kalender, iPhone, Mac, Outlook und vielen anderen Kalendern. Google Nutzer können alternativ den Google Kalender Button nehmen.</p>
+        <p class="intro">Musik, Tanz, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease „Quirky Nightclub Chronicles“.<br>Euer arcis (Arcis Saxophon Quartett und arcis_collective)</p>
+        <p class="intro-en">Music, dance, drinks and food in the garden of our rehearsal studio. At the same time, we are celebrating the release of our album “Quirky Nightclub Chronicles”.<br>Your arcis (Arcis Saxophon Quartett and arcis_collective)</p>
         <p class="footer">Arcis Saxophon Quartett und arcis_collective<br>
         <a href="https://www.arcissaxophonquartett.de">arcissaxophonquartett.de</a> ·
         <a href="https://www.arciscollective.de">arciscollective.de</a> ·
