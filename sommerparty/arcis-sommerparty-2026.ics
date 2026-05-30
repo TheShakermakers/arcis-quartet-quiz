@@ -4,34 +4,18 @@ PRODID:-//Arcis Saxophon Quartett//Sommerparty 2026//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Arcis Sommerparty
-BEGIN:VTIMEZONE
-TZID:Europe/Berlin
-X-LIC-LOCATION:Europe/Berlin
-BEGIN:DAYLIGHT
-TZOFFSETFROM:+0100
-TZOFFSETTO:+0200
-TZNAME:CEST
-DTSTART:19700329T020000
-RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
-END:DAYLIGHT
-BEGIN:STANDARD
-TZOFFSETFROM:+0200
-TZOFFSETTO:+0100
-TZNAME:CET
-DTSTART:19701025T030000
-RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
-END:STANDARD
-END:VTIMEZONE
 BEGIN:VEVENT
 UID:arcis-sommerparty-2026-07-15@arcissaxophonquartett.de
-DTSTAMP:20260530T094500Z
-DTSTART;TZID=Europe/Berlin:20260715T180000
-DTEND;TZID=Europe/Berlin:20260715T230000
+DTSTAMP:20260530T100500Z
+DTSTART:20260715T160000Z
+DTEND:20260715T210000Z
 SUMMARY:Arcis Sommerparty
-LOCATION:Frauenlobstraße 5, München
-DESCRIPTION:Musik\, Tanz\, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease "Quirky Nightclub Chronicles".\nEuer arcis (Arcis Saxophon Quartett und arcis_collective)\n\nMusic\, dance\, drinks and food in the garden of our rehearsal studio. At the same time\, we are celebrating the release of our album "Quirky Nightclub Chronicles".\nYour arcis (Arcis Saxophon Quartett and arcis_collective)\n\nKontakt: booking@arcisquartett.de\nWebsite Arcis Saxophon Quartett: https://www.arcissaxophonquartett.de\nWebsite arcis_collective: https://www.arciscollective.de\nInstagram: https://www.instagram.com/arcissaxophonquartett
+LOCATION:Frauenlobstraße 5\, München
+ORGANIZER;CN=Arcis Saxophon Quartett:mailto:booking@arcisquartett.de
+DESCRIPTION:Musik\, Tanz\, Drinks und Food im Garten unseres Probenstudios.\nAlbumrelease: Quirky Nightclub Chronicles.\nEuer arcis: Arcis Saxophon Quartett und arcis_collective.\n\nMusic\, dance\, drinks and food in the garden of our rehearsal studio.\nAlbum release: Quirky Nightclub Chronicles.\nYour arcis: Arcis Saxophon Quartett and arcis_collective.\n\nbooking@arcisquartett.de\nhttps://www.arcissaxophonquartett.de\nhttps://www.arciscollective.de
 URL:https://www.arciscollective.de
 STATUS:CONFIRMED
+SEQUENCE:0
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR
