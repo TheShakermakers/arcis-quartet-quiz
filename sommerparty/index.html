@@ -85,7 +85,24 @@
       padding: 4px 8px;
     }
     .buttons {
-      margin: 22px 0 0;
+      margin: 20px 0 0;
+    }
+    .iphone-warning {
+      margin: 0 0 11px;
+      padding: 11px 13px;
+      border: 2px solid #e30613;
+      border-radius: 16px;
+      background: #fff;
+      color: #151515;
+      font-size: 14px;
+      line-height: 1.25;
+      font-weight: 800;
+      text-align: center;
+    }
+    .iphone-warning strong {
+      color: #e30613;
+      text-transform: uppercase;
+      letter-spacing: .02em;
     }
     a.button {
       text-align: center;
@@ -141,15 +158,15 @@
         <p class="date">15. Juli 2026<br>18:00 Uhr</p>
         <p class="place">Frauenlobstraße 5</p>
         <div class="buttons">
+          <p class="iphone-warning" id="iphone-warning" hidden><strong>iPhone Hinweis:</strong><br>Im nächsten Fenster bitte unten auf „Hinzufügen“ tippen. Der blaue Haken oben rechts fügt den Termin nicht hinzu.</p>
           <a class="button primary" id="primary-calendar" href="arcis-sommerparty-2026-iphone.ics">In Kalender eintragen</a>
           <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
-            <a class="button secondary" href="apple-kalender.html">Apple Mac</a>
             <a class="button secondary" id="google" href="#">Google</a>
             <a class="button secondary" id="outlook" href="#">Outlook</a>
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
           </div>
           <p class="small" id="calendar-hint">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
-          <p class="small ios-tip" id="ios-tip" hidden>iPhone: Im Importfenster oben rechts hinzufügen. Falls du Google Kalender nutzt, nimm unten Google.</p>
+          <p class="small ios-tip" id="ios-tip" hidden>iPhone: Nach dem Öffnen bitte unten auf „Hinzufügen“ tippen.</p>
         </div>
       </div>
       <div class="content">
@@ -169,14 +186,10 @@
     const userAgent = navigator.userAgent || "";
     const platform = navigator.platform || "";
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    const isMacDesktop = /Mac/.test(platform) && !isIOS;
     if (isIOS) {
-      document.getElementById("calendar-hint").textContent = "iPhone: Der große Button öffnet eine neue Kalenderdatei. Danach oben rechts hinzufügen.";
+      document.getElementById("iphone-warning").hidden = false;
+      document.getElementById("calendar-hint").textContent = "Der Termin wird erst gespeichert, wenn du im nächsten Fenster unten auf „Hinzufügen“ tippst.";
       document.getElementById("ios-tip").hidden = false;
-    }
-    if (isMacDesktop) {
-      document.getElementById("primary-calendar").href = "apple-kalender.html";
-      document.getElementById("calendar-hint").textContent = "Auf dem Mac versucht die Hauptoption direkt Apple Kalender zu öffnen. Sonst funktioniert die Kalenderdatei.";
     }
     const params = new URLSearchParams({ action: "TEMPLATE", text: title, dates: "20260715T160000Z/20260715T210000Z", details, location: locationText, ctz: "Europe/Berlin" });
     document.getElementById("google").href = "https://calendar.google.com/calendar/render?" + params.toString();
