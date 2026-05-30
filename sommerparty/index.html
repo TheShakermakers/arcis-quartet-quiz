@@ -88,22 +88,18 @@
       margin: 20px 0 0;
     }
     .iphone-warning {
-      margin: 0 0 11px;
-      padding: 11px 13px;
-      border: 2px solid #e30613;
-      border-radius: 16px;
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      border: 1.5px solid #e30613;
+      border-radius: 14px;
       background: #fff;
       color: #151515;
-      font-size: 14px;
+      font-size: 12.5px;
       line-height: 1.25;
-      font-weight: 800;
+      font-weight: 750;
       text-align: center;
     }
-    .iphone-warning strong {
-      color: #e30613;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-    }
+    .iphone-warning strong { color: #e30613; }
     a.button {
       text-align: center;
       border-radius: 999px;
@@ -140,7 +136,6 @@
       opacity: 0.86;
     }
     .small { font-size: 12.5px; color: #555; margin: 9px 0 0; text-align: center; }
-    .ios-tip { margin-top: 5px; }
     .content { padding: 22px 24px 24px; }
     .intro { font-size: 18px; margin: 0 0 8px; }
     .intro-en { font-size: 15px; font-style: italic; color: #555; margin: 0 0 18px; }
@@ -158,7 +153,7 @@
         <p class="date">15. Juli 2026<br>18:00 Uhr</p>
         <p class="place">Frauenlobstraße 5</p>
         <div class="buttons">
-          <p class="iphone-warning" id="iphone-warning" hidden><strong>iPhone Hinweis:</strong><br>Im nächsten Fenster bitte unten auf „Hinzufügen“ tippen. Der blaue Haken oben rechts fügt den Termin nicht hinzu.</p>
+          <p class="iphone-warning"><strong>iPhone:</strong> unten „Hinzufügen“ tippen.<br><strong>iPhone:</strong> tap “Add” at the bottom.</p>
           <a class="button primary" id="primary-calendar" href="arcis-sommerparty-2026-iphone.ics">In Kalender eintragen</a>
           <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
             <a class="button secondary" id="google" href="#">Google</a>
@@ -166,7 +161,6 @@
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
           </div>
           <p class="small" id="calendar-hint">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
-          <p class="small ios-tip" id="ios-tip" hidden>iPhone: Nach dem Öffnen bitte unten auf „Hinzufügen“ tippen.</p>
         </div>
       </div>
       <div class="content">
@@ -183,14 +177,6 @@
     const title = "Arcis Sommerparty";
     const locationText = "Frauenlobstraße 5, München";
     const details = `Arcis Sommerparty am 15. Juli 2026 ab 18:00 Uhr.\n\nMusik, Tanz, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease "Quirky Nightclub Chronicles".\nEuer arcis (Arcis Saxophon Quartett und arcis_collective)\n\nMusic, dance, drinks and food in the garden of our rehearsal studio. At the same time, we are celebrating the release of our album "Quirky Nightclub Chronicles".\nYour arcis (Arcis Saxophon Quartett and arcis_collective)\n\nKontakt: booking@arcisquartett.de\nWebsite Arcis Saxophon Quartett: https://www.arcissaxophonquartett.de\nWebsite arcis_collective: https://www.arciscollective.de\nInstagram: https://www.instagram.com/arcissaxophonquartett`;
-    const userAgent = navigator.userAgent || "";
-    const platform = navigator.platform || "";
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    if (isIOS) {
-      document.getElementById("iphone-warning").hidden = false;
-      document.getElementById("calendar-hint").textContent = "Der Termin wird erst gespeichert, wenn du im nächsten Fenster unten auf „Hinzufügen“ tippst.";
-      document.getElementById("ios-tip").hidden = false;
-    }
     const params = new URLSearchParams({ action: "TEMPLATE", text: title, dates: "20260715T160000Z/20260715T210000Z", details, location: locationText, ctz: "Europe/Berlin" });
     document.getElementById("google").href = "https://calendar.google.com/calendar/render?" + params.toString();
     const outlookParams = new URLSearchParams({ path: "/calendar/action/compose", rru: "addevent", subject: title, startdt: "2026-07-15T18:00:00", enddt: "2026-07-15T23:00:00", body: details, location: locationText });
