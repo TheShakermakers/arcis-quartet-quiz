@@ -6,13 +6,19 @@ METHOD:PUBLISH
 X-WR-CALNAME:Arcis Sommerparty
 BEGIN:VEVENT
 UID:arcis-sommerparty-2026-07-15@arcissaxophonquartett.de
-DTSTAMP:20260530T100500Z
+DTSTAMP:20260530T101500Z
 DTSTART:20260715T160000Z
 DTEND:20260715T210000Z
 SUMMARY:Arcis Sommerparty
 LOCATION:Frauenlobstraße 5\, München
 ORGANIZER;CN=Arcis Saxophon Quartett:mailto:booking@arcisquartett.de
-DESCRIPTION:Musik\, Tanz\, Drinks und Food im Garten unseres Probenstudios.\nAlbumrelease: Quirky Nightclub Chronicles.\nEuer arcis: Arcis Saxophon Quartett und arcis_collective.\n\nMusic\, dance\, drinks and food in the garden of our rehearsal studio.\nAlbum release: Quirky Nightclub Chronicles.\nYour arcis: Arcis Saxophon Quartett and arcis_collective.\n\nbooking@arcisquartett.de\nhttps://www.arcissaxophonquartett.de\nhttps://www.arciscollective.de
+DESCRIPTION:Musik\, Tanz\, Drinks und Food im Garten unseres Probenstudios.\n
+ Albumrelease: Quirky Nightclub Chronicles.\nEuer arcis: Arcis Saxophon
+  Quartett und arcis_collective.\n\nMusic\, dance\, drinks and food in the
+  garden of our rehearsal studio.\nAlbum release: Quirky Nightclub
+  Chronicles.\nYour arcis: Arcis Saxophon Quartett and arcis_collective.
+  \n\nbooking@arcisquartett.de\nhttps://www.arcissaxophonquartett.de
+  \nhttps://www.arciscollective.de
 URL:https://www.arciscollective.de
 STATUS:CONFIRMED
 SEQUENCE:0
