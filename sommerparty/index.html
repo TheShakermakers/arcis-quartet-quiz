@@ -169,7 +169,7 @@
     const primaryCalendar = document.getElementById("primary-calendar");
     primaryCalendar.addEventListener("click", function () {
       if (isIOS) {
-        alert("Wichtig: Im nächsten Fenster unten auf ‚Hinzufügen‘ tippen. Der blaue Haken oben rechts speichert den Termin nicht.\n\nImportant: In the next window, tap ‘Add’ at the bottom. The blue checkmark at the top right does not save the event.");
+        alert("iPhone: Im nächsten Fenster unten auf ‚Hinzufügen‘ tippen. Der blaue Haken oben rechts speichert den Termin nicht.\n\niPhone: In the next window, tap ‘Add’ at the bottom. The blue checkmark at the top right does not save the event.");
       }
     });
     const params = new URLSearchParams({ action: "TEMPLATE", text: title, dates: "20260715T160000Z/20260715T210000Z", details, location: locationText, ctz: "Europe/Berlin" });
