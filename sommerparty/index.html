@@ -123,6 +123,7 @@
       opacity: 0.86;
     }
     .small { font-size: 12.5px; color: #555; margin: 9px 0 0; text-align: center; }
+    .ios-tip { margin-top: 5px; }
     .content { padding: 22px 24px 24px; }
     .intro { font-size: 18px; margin: 0 0 8px; }
     .intro-en { font-size: 15px; font-style: italic; color: #555; margin: 0 0 18px; }
@@ -148,6 +149,7 @@
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
           </div>
           <p class="small" id="calendar-hint">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
+          <p class="small ios-tip" id="ios-tip" hidden>iPhone: Wenn du den Google Kalender nutzt, nimm unten Google. Der große Button geht in den Apple Kalender.</p>
         </div>
       </div>
       <div class="content">
@@ -168,6 +170,10 @@
     const platform = navigator.platform || "";
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const isMacDesktop = /Mac/.test(platform) && !isIOS;
+    if (isIOS) {
+      document.getElementById("calendar-hint").textContent = "iPhone: Der große Button öffnet den Apple Kalender. Danach oben rechts hinzufügen.";
+      document.getElementById("ios-tip").hidden = false;
+    }
     if (isMacDesktop) {
       document.getElementById("primary-calendar").href = "apple-kalender.html";
       document.getElementById("calendar-hint").textContent = "Auf dem Mac versucht die Hauptoption direkt Apple Kalender zu öffnen. Sonst funktioniert die Kalenderdatei.";
