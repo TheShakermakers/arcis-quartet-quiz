@@ -29,7 +29,7 @@
       background: white;
     }
     .hero {
-      padding: 34px 24px 30px;
+      padding: 34px 24px 24px;
       border-bottom: 2px solid #151515;
       background:
         radial-gradient(circle at 10% 20%, transparent 0 20px, rgba(0,0,0,.08) 21px 23px, transparent 24px),
@@ -84,12 +84,8 @@
       background: white;
       padding: 4px 8px;
     }
-    .content { padding: 22px 24px 24px; }
-    .meta { font-size: 19px; margin: 0 0 14px; }
-    .intro { font-size: 18px; margin: 18px 0 8px; }
-    .intro-en { font-size: 15px; font-style: italic; color: #555; margin: 0 0 18px; }
     .buttons {
-      margin: 14px 0 16px;
+      margin: 22px 0 0;
     }
     a.button {
       text-align: center;
@@ -113,20 +109,23 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 6px;
-      margin-top: 9px;
+      margin-top: 8px;
     }
     a.button.secondary {
       display: inline-block;
-      background: #fff;
+      background: rgba(255,255,255,0.92);
       color: #e30613;
-      padding: 4px 8px;
-      font-size: 11px;
-      line-height: 1.1;
+      padding: 3px 7px;
+      font-size: 10.5px;
+      line-height: 1.05;
       font-weight: 700;
       border-width: 1px;
-      opacity: 0.88;
+      opacity: 0.86;
     }
-    .small { font-size: 13px; color: #555; margin: 10px 0 0; text-align: center; }
+    .small { font-size: 12.5px; color: #555; margin: 9px 0 0; text-align: center; }
+    .content { padding: 22px 24px 24px; }
+    .intro { font-size: 18px; margin: 0 0 8px; }
+    .intro-en { font-size: 15px; font-style: italic; color: #555; margin: 0 0 18px; }
     .footer { font-size: 14px; margin-top: 22px; color: #333; }
     .footer a { color: #e30613; }
   </style>
@@ -140,18 +139,17 @@
         <p class="subline">Music · Dance · Drinks · Food</p>
         <p class="date">15. Juli 2026<br>18:00 Uhr</p>
         <p class="place">Frauenlobstraße 5</p>
-      </div>
-      <div class="content">
-        <p class="meta"><strong>15. Juli 2026, ab 18:00 Uhr</strong><br>Frauenlobstraße 5, München</p>
         <div class="buttons">
           <a class="button primary" href="arcis-sommerparty-2026.ics">In Kalender eintragen</a>
           <div class="alternative-buttons" aria-label="Alternative Kalenderoptionen">
-            <a class="button secondary" id="google" href="#">Google Kalender</a>
-            <a class="button secondary" id="outlook" href="#">Outlook Web</a>
+            <a class="button secondary" id="google" href="#">Google</a>
+            <a class="button secondary" id="outlook" href="#">Outlook</a>
             <a class="button secondary" id="yahoo" href="#">Yahoo</a>
           </div>
-          <p class="small">Die Hauptoption öffnet die Kalenderdatei für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
+          <p class="small">Für Apple Kalender, iPhone, Mac, Outlook und viele andere Kalender.</p>
         </div>
+      </div>
+      <div class="content">
         <p class="intro">Musik, Tanz, Drinks und Food im Garten unseres Probenstudios. Gleichzeitig feiern wir unseren Albumrelease „Quirky Nightclub Chronicles“.<br>Euer arcis (Arcis Saxophon Quartett und arcis_collective)</p>
         <p class="intro-en">Music, dance, drinks and food in the garden of our rehearsal studio. At the same time, we are celebrating the release of our album “Quirky Nightclub Chronicles”.<br>Your arcis (Arcis Saxophon Quartett and arcis_collective)</p>
         <p class="footer">Arcis Saxophon Quartett und arcis_collective<br>
